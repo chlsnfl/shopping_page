@@ -20,6 +20,7 @@ body{
 .border-right{
     border-right: 1px solid #ddd;
 }
+
 /***################## HEADER #####################***/
 header{
     width:100%;
@@ -303,6 +304,7 @@ ul.nav>li:first-child>a{
     color:#333;
     text-decoration:none;
 }
+
 .list-all{
     width:22px;
     height:22px;
@@ -365,8 +367,52 @@ ul.nav>li:first-child>a{
     display: none;
     z-index: 1;
 }
+
 .sitenav{
     background: #fff;
     padding: 40px;
-
+}
+.sitenav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sitenav li>a{
+    display: block;
+    padding-bottom: 10px;
+    color: #999;
+}
+.mt-cat{
+    margin-top: 40px;
+}
+.cart-view{
+    width: 350px;
+    padding: 40px;
+    border: 1px solid #ddd;
+    background: #fff;
+    position: absolute;
+    right: 298px;
+    top: 50px;
+    z-index: 100;
+    display: none;
+}
+.none{
+    display: none;
+}
+.cart-title{
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+    justify-content: space-between;
+}
+.cart-title h1{
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.cart-close{
+    cursor: pointer;
+    transition: all 300ms;
+}
+.cart-close:hover{
+    transform: rotate(180deg);
 }
