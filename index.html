@@ -81,7 +81,6 @@
                            <li class="nav-item"><a href="#">당일발송</a></li>
                         </ul>
                     </div>
-
                     <div class="col-lg-2 text-right all">
                         <a href="#" class="cart" id="cart">
                             <span class="material-icons-two-tone">
@@ -93,20 +92,57 @@
                             <span></span>
                             <span></span>
                         </a>
-                        <div class="cart-view none">
-                            <div class="cart-title">
-                                <h1>SHOPPING BOX</h1>
-                                <span class="material-icons-outlined cart-close" >
-                                    close
-                                </span>
-                            </div>
-                        </div>
                     </div>
                 </div>
+
+                <!-- 장바구늬 스-->
+                <div class="cart-view none">
+                    <div class="cart-title">
+                       <h1>shopping-box</h1>
+                       <div class="cart-close" id="close">
+                          <span class="material-icons-outlined">
+                             close
+                          </span>
+                       </div>
+                    </div>    
+                    <div class="cart-body">
+                        <ul class="tab">
+                            <li class="active"><a href="javascript:void(0)" onclick="viewTab(0);">장바구니</a></li>
+                            <li><a href="javascript:void(0)" onclick="viewTab(1);">최근본상품</a></li>
+                            <li><a href="javascript:void(0)" onclick="viewTab(2);">관심상품</a></li>
+                            <li><a href="javascript:void(0)" onclick="viewTab(3);">좋아요</a></li>
+                        </ul>
+                        <div class="tabcontent-box">
+                           <div class="tabcontent active">
+                               <div class="imgbox">
+                                  <img src="images/001.gif" alt="001">
+                               </div>
+                               <div class="txtbox"></div>
+                           </div>
+                           <div class="tabcontent">
+                              <div class="imgbox"></div>
+                              <div class="txtbox"></div>
+                           </div>
+                           <div class="tabcontent">
+                              <div class="imgbox"></div>
+                              <div class="txtbox"></div>
+                           </div>
+                           <div class="tabcontent">
+                              <div class="imgbox"></div>
+                              <div class="txtbox"></div>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="cart-bottom">
+                        dd
+                    </div>
+                </div>
+
             </div>
-            <!-- sitemap -->
+
+            <!--sitemap -->
             <div class="sitemap" id="sitemap">
-                <div class="sitenav">
+                 <div class="sitenav">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-5">
@@ -120,72 +156,319 @@
                                         </ul>
                                     </div>
                                     <div class="col-md-6">
-                                        <ul class="mt-cat">
-                                            <li><a href="#">인기상품재입고</a></li>
-                                            <li><a href="#">77사이즈</a></li>
-                                            <li><a href="#">원피스</a></li>
-                                            <li><a href="#">아우터</a></li>
-                                            <li><a href="#">상의</a></li>
-                                            <li><a href="#">치마</a></li>
-                                            <li><a href="#">바지</a></li>
-                                            <li><a href="#">슈즈</a></li>
-                                            <li><a href="#">악세사리</a></li>
-                                            <li><a href="#">아울렛</a></li>
-                                            <li><a href="#">개인결제</a></li>
-                                            <li><a href="#">당일배송</a></li>
-                                        </ul>
+                                       <ul class="mt-cat">
+                                        <li><a href="#">인기상품재입고</a></li>
+                                        <li><a href="#">77사이즈</a></li>
+                                        <li><a href="#">원피스</a></li>
+                                        <li><a href="#">아우터</a></li>
+                                        <li><a href="#">상의</a></li>
+                                        <li><a href="#">치마</a></li>
+                                        <li><a href="#">바지</a></li>
+                                        <li><a href="#">슈즈</a></li>
+                                        <li><a href="#">악세사리</a></li>
+                                        <li><a href="#">아울렛</a></li>
+                                        <li><a href="#">개인결제</a></li>
+                                        <li><a href="#">당일배송</a></li>
+                                       </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-7">
-                                <div class="row">
-                                    <div class="col-md-4 border-right">
-                                        <h1>커뮤니티</h1>
-                                        <ul>
-                                            <li><a href="3">공지사항</a></li>
-                                            <li><a href="3">이벤트</a></li>
-                                            <li><a href="3">상품후기</a></li>
-                                            <li><a href="3">자주묻는질문</a></li>
-                                            <li><a href="3">VIP전용게시판</a></li>
-                                            <li><a href="3">배송문의</a></li>
-                                            <li><a href="3">교환/반품문의</a></li>
-                                            <li><a href="3">배송전 취소/변경</a></li>
-                                            <li><a href="3">입금/기타문의</a></li>
-                                            <li><a href="3">상품문의</a></li>
-                                            <li><a href="3">코디/재입고문의</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-4 border-right">
-                                        <h1>쇼핑</h1>
-                                        <ul>
-                                            <li><a href="3">장바구니</a></li>
-                                            <li><a href="3">배송조회</a></li>
-                                            <li><a href="3">내 쿠폰</a></li>
-                                            <li><a href="3">좋아요</a></li>
-                                            <li><a href="3">관심상품</a></li>
-                                            <li><a href="3">최근 본 상품</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h1>개인정보</h1>
-                                        <ul>
-                                            <li><a href="#">아이쇼핑</a></li>
-                                            <li><a href="#">로그인</a></li>
-                                            <li><a href="#">회원가입</a></li>
-                                            <li><a href="#">아이디 찾기</a></li>
-                                            <li><a href="#">비밀번호 찾기</a></li>
-                                        </ul>
-                                    </div>
+                                <div class="row">  
+                                   <div class="col-md-4 border-right">
+                                       <h1>커뮤니티</h1>
+                                       <ul>
+                                        <li><a href="#">공지사항</a></li>
+                                        <li><a href="#">이벤트</a></li>
+                                        <li><a href="#">상품후기</a></li>
+                                        <li><a href="#">자주묻는질문</a></li>
+                                        <li><a href="#">VIP전용게시판</a></li>
+                                        <li><a href="#">배송문의</a></li>
+                                        <li><a href="#">교환/반품문의</a></li>
+                                        <li><a href="#">배송전 취소/변경</a></li>
+                                        <li><a href="#">입금/기타문의</a></li>
+                                        <li><a href="#">상품문의</a></li>
+                                        <li><a href="#">고디/재입고문의</a></li>
+                                       </ul>
+                                   </div>
+                                   <div class="col-md-4 border-right">
+                                       <h1>쇼핑</h1>
+                                       <ul>
+                                        <li><a href="#">장바구니</a></li>
+                                        <li><a href="#">배송조회</a></li>
+                                        <li><a href="#">내 쿠폰</a></li>
+                                        <li><a href="#">좋아요</a></li>
+                                        <li><a href="#">관심상품</a></li>
+                                        <li><a href="#">최근 본 상품</a></li>
+                                       </ul>
+                                   </div>
+                                   <div class="col-md-4">
+                                       <h1>개인정보</h1>
+                                       <ul>
+                                        <li><a href="#">마이쇼핑</a></li>
+                                        <li><a href="#">로그인</a></li>
+                                        <li><a href="#">회원가입</a></li>
+                                        <li><a href="#">아이디 찾기</a></li>
+                                        <li><a href="#">비밀번호 찾기</a></li>
+                                       </ul>
+                                   </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- 장바구니씌 -->
-
+                 </div>
             </div>
+
         </nav>
+
     </header>
-    <script src="js/shop.js"></script>
+    
+    <!-- hero -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 ovhidden">
+               <div class="img-slide fade">
+                 <img src="images/001.jpg" alt="001">
+               </div>
+               <div class="img-slide fade">
+                 <img src="images/002.jpg" alt="002">
+               </div>
+               <div class="img-slide fade">
+                 <img src="images/003.jpg" alt="003">
+               </div>
+               <ul class="paging-img">
+                 <li class="active dot"></li>
+                 <li class="dot"></li>
+                 <li class="dot"></li>
+               </ul>
+            </div>
+            <div class="col-lg-7 shopstreet">
+                <img src="images/shopping.jpg" alt="shopstreet" />
+            </div>
+        </div><!-- // row -->
+        <div class="row justify-content-center">
+            <h1 class="my-5 pt-5 pb-1 shoptitle">주간 BEST</h1>
+        </div>
+        <div class="row pt-5">
+            <ul class="best-tab justify-content-center">
+                <li class="tablinks active" onClick="openBest(event, 'best1')">원피스</li>
+                <li class="tablinks" onClick="openBest(event, 'best2')">아우터</li>
+                <li class="tablinks" onClick="openBest(event, 'best3')">상의</li>
+                <li class="tablinks" onClick="openBest(event, 'best4')">치마</li>
+                <li class="tablinks" onClick="openBest(event, 'best5')">바지</li>
+            </ul>
+            <!-- tabcontent -->
+            <div id="best1" class="besttabcontent">
+              <div class="row">
+                <!--loop -->
+                 <a href="#">
+                    <img src="images/001.jpg" class="img-fluid" alt="001">
+                    <h2>어쩌구원피스</h2>
+                    <p>500원</p>
+                 </a>
+                 <a href="#">
+                    <img src="images/002.jpg" class="img-fluid" alt="002">
+                    <h2>어쩌구원피스</h2>
+                    <p>500원</p>
+                 </a>
+                 <a href="#">
+                    <img src="images/003.jpg" class="img-fluid" alt="003">
+                    <h2>어쩌구원피스</h2>
+                    <p>500원</p>
+                 </a>
+                 <a href="#">
+                    <img src="images/004.jpg" class="img-fluid" alt="004">
+                    <h2>어쩌구원피스</h2>
+                    <p>500원</p>
+                 </a>
+                 <a href="#">
+                    <img src="images/005.jpg" class="img-fluid" alt="005">
+                    <h2>어쩌구원피스</h2>
+                    <p>500원</p>
+                 </a>
+                 <!--/loop -->
+              </div>    
+            </div>
+            <div id="best2" class="besttabcontent">
+                <div class="row">
+                    <!--loop -->
+                     <a href="#">
+                        <img src="images/006.jpg" class="img-fluid" alt="001">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/007.jpg" class="img-fluid" alt="002">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/008.jpg" class="img-fluid" alt="003">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/009.jpg" class="img-fluid" alt="004">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/010.jpg" class="img-fluid" alt="005">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <!--/loop -->
+                  </div>    
+            </div>
+            <div id="best3" class="besttabcontent">
+                <div class="row">
+                    <!--loop -->
+                     <a href="#">
+                        <img src="images/011.jpg" class="img-fluid" alt="001">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/012.jpg" class="img-fluid" alt="002">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/013.jpg" class="img-fluid" alt="003">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/014.jpg" class="img-fluid" alt="004">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/015.jpg" class="img-fluid" alt="005">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <!--/loop -->
+                  </div>    
+            </div>
+            <div id="best4" class="besttabcontent">
+                <div class="row">
+                    <!--loop -->
+                     <a href="#">
+                        <img src="images/016.jpg" class="img-fluid" alt="001">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/017.jpg" class="img-fluid" alt="002">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/018.jpg" class="img-fluid" alt="003">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/019.jpg" class="img-fluid" alt="004">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/020.jpg" class="img-fluid" alt="005">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <!--/loop -->
+                  </div>    
+            </div>
+            <div id="best5" class="besttabcontent">
+                <div class="row">
+                    <!--loop -->
+                     <a href="#">
+                        <img src="images/021.jpg" class="img-fluid" alt="001">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/022.jpg" class="img-fluid" alt="002">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/023.jpg" class="img-fluid" alt="003">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/024.jpg" class="img-fluid" alt="004">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/025.jpg" class="img-fluid" alt="005">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <!--/loop -->
+                  </div>    
+            </div>
+        </div> 
+
+    </div><!--//container -->
+
+    <div class="container-fluid pink">
+        <did class="container">
+            <h1>BANNER</h1>
+        </did>
+    </div>
+
+    <div class="container ">
+        <div class="row justify-content-center">
+            <h1 class="my-5 pt-5 pb-1 shoptitle">PRODUCT</h1>
+         </div>
+        <div class="row justify-content-center listview">
+            <div class="listbox" onclick="visit(12)"></div>
+            <div class="box4" onclick="visit(4)"></div>
+            <div class="box3" onclick="visit(3)"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="img-fluid">
+                    <a href="#">
+                        <img src="images/026.jpg" class="img-fluid" alt="005">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/027.jpg" class="img-fluid" alt="005">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">
+                        <img src="images/028.jpg" class="img-fluid" alt="005">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                     <a href="#">       
+                        <img src="images/029.jpg" class="img-fluid" alt="005">
+                        <h2>어쩌구원피스</h2>
+                        <p>500원</p>
+                     </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/shop.js">
+        function visit(n){
+            const el = document.querySelectorAll(".pd");
+            el.forEach((items)=>{
+                items.classList.remove('col-lg-3','col-lg-4','col-lg-12');
+                items.classList.remove('col-lg-'+n);
+            })
+        }
+    </script>
+
 </body>
 </html>
