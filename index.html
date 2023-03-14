@@ -245,7 +245,8 @@
             <div class="col-lg-7 shopstreet">
                 <img src="images/shopping.jpg" alt="shopstreet" />
             </div>
-        </div><!-- // row -->
+        </div>
+        <!-- // row -->
         <div class="row justify-content-center">
             <h1 class="my-5 pt-5 pb-1 shoptitle">주간 BEST</h1>
         </div>
@@ -432,43 +433,90 @@
             <div class="box4" onclick="visit(4)"></div>
             <div class="box3" onclick="visit(3)"></div>
         </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="img-fluid">
-                    <a href="#">
-                        <img src="images/026.jpg" class="img-fluid" alt="005">
-                        <h2>어쩌구원피스</h2>
-                        <p>500원</p>
-                     </a>
-                     <a href="#">
-                        <img src="images/027.jpg" class="img-fluid" alt="005">
-                        <h2>어쩌구원피스</h2>
-                        <p>500원</p>
-                     </a>
-                     <a href="#">
-                        <img src="images/028.jpg" class="img-fluid" alt="005">
-                        <h2>어쩌구원피스</h2>
-                        <p>500원</p>
-                     </a>
-                     <a href="#">       
-                        <img src="images/029.jpg" class="img-fluid" alt="005">
-                        <h2>어쩌구원피스</h2>
-                        <p>500원</p>
-                     </a>
+        <div class="row my-5" id="row">
+            <!-- loop -->
+            <div class="col-lg-3 my-5">
+                <div class="card">
+                   <a href="main.html">
+                       <img src="images/001.jpg" class="img-fluid" alt="001">
+                   </a> 
+                    <div class="pd-list">
+                        <li>
+                            <span class="gray"></span>
+                            <span class="blue"></span>
+                            <span class="black"></span>
+                            <span class="white"></span>
+                        </li>
+                        <li class="pd-title">
+                            <h1>리두트위트치마세트</h1>
+                        </li>
+                        <li>
+                            <del>140,000원</del>
+                            <br>
+                            <strong>133,000원</strong>
+                        </li>
+                        <li>
+                            <p>블링블링 봄을 닮은 화사한 세트룩</p>
+                        </li>
+                        <li class="last">
+                            <span>베스트샐러</span>
+                            <span>핫딜할인5%</span>
+                        </li>
+
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- /loop -->
     </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="bglogobox">
+                        <img src="images/logo.png" alt="shop" class="bglogo">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                    <div class="footer-nav">
+                        <a href="#" class="act">이용안내</a>
+                        <a href="#" >이용약관</a>
+                        <a href="#" ><strong>개인정보처리방침</strong></a>
+                        <a href="#" >cs센터</a>
+                    </div>
+                    <div class="address">
+                        <p>(주)토순이와친구들 | 칭구칭구 | 대표이사 : 김박최 | 사업자등록번호 : 000-00-00000 | dontsend@naver.com</p>
+                        <address>
+                            경기도 김포시 999 장기로 17 (장기동) 월드타워 8F
+                            고객센터 : 0000-0000| 팩스 : 052-000-000
+                            통신판매업신고 : 제2191-서울성북-00000 | 서비스 가입사실 확인| 개인정보보호책임자 : 김박최
+                            교환 / 반품 : 서울시 동대문구 천호대로4 동대문우체국(810) 김박최 (반품주소지) 우편번호 : 00000
+                        </address>
+                    </div>
+                </div>
+                <div class="offset-lg-2 col-lg-3">
+                    <div class="cs">
+                        <h4>CS CENTER</h4>
+                    </div>
+                    <div class="call">
+                        <h2>1566-4773</h2>
+                    </div>
+                    <div class="cs-list">
 
-    <script src="js/shop.js">
-        function visit(n){
-            const el = document.querySelectorAll(".pd");
-            el.forEach((items)=>{
-                items.classList.remove('col-lg-3','col-lg-4','col-lg-12');
-                items.classList.remove('col-lg-'+n);
-            })
-        }
-    </script>
+                            <p>평일 / 오전10시-오후4시</p>
+                            <p>점심 / 오후12시-오후1시</p>
+                            <p>토, 일, 공휴일 휴무</p>
+
+                    </div>
+                </div>  
+                <div class="col-lg-2">3</div>
+            </div>
+        </div>
+    </footer>
+ 
+    <script src="js/shop.js"></script>
+
 
 </body>
 </html>

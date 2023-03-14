@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined');
 @import url('https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
+
 body{
     font-family: 'Nanum Gothic', sans-serif;
     font-size: 12px;
@@ -648,4 +650,120 @@ ul.paging-img li.active{
 }
 .box3:hover{
     background-color: rgb(253, 221, 226) url(../design/list01_hover.svg) no-repeat;
+}
+/*****상품디자인*****/
+.pd-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.pd-list li{
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.pd-list li:first-child span{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 0 4px;
+}
+.gray{
+    background: gray;
+}
+.blue{
+    background: blue;
+}
+.black{
+    background: black;
+}
+.white{
+    border: 1px solid #333;
+}
+.pd-title{
+    border-bottom: 1px solid #e3e3e3;
+}
+.pd-title h1{
+    font-size: 14px;
+}
+li del{
+    color: #999;
+}
+.pd-list p{
+    margin: 0;
+    padding: 0;
+}
+li.last span{
+    color: #c72b35;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+li.last span:not(:last-child)::after{
+    content: "/";
+    display: inline-block;
+    padding-left: 3px;
+}
+/*footer*/
+footer{
+    background-color: #dedede;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-top: 1px solid #ededed;
+}
+.bglogobox{
+    display: flex;
+    align-items: center;
+}
+.bglogo{
+    height: 25px;
+    filter: grayscale(70%);
+    opacity: 0.5;
+    margin-right: 100px;
+}
+.bglogobox a{
+    color: #555;
+    margin-right: 15px;
+}
+.bglogobox a i{
+    font-size: 25px;
+}
+.footer-nav{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.footer-nav a{
+    margin-left: 15px;
+    display: inline-block;
+    position: relative;
+    color: #555;
+    padding-bottom: 4px;
+    text-decoration: none;
+}
+.footer-nav a.act{
+    border-bottom: 2px solid #555;
+}
+.footer-nav a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    display: block;
+    height: 1px;
+    background: #555;
+    transform: scaleX(0);
+    transition: 300ms;
+}
+.footer-nav a:hover::after{
+    transform: scaleX(1);
+    transition: 300ms;
+}
+.cs{
+    padding-bottom: 15px;
+}
+.call{
+    font-weight: bold;
+}
+.cs-list{
+    margin-bottom: 0;
 }
