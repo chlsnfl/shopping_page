@@ -22,6 +22,9 @@ html,body{
     border-right:1px solid #ddd;
 }
 
+a, a:link{
+    color: #555;
+}
 /***################## HEADER #####################***/
 header{
     width:100%;
@@ -766,4 +769,78 @@ footer{
 }
 .cs-list{
     margin-bottom: 0;
+}
+.quick{
+    position: fixed;
+    width: 220px;
+    height: 100%;
+    top: 0;
+    right: -220px;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    transition: all 500ms;
+    padding-top: 50px;
+}
+.quick.action{
+    right: 0px;
+}
+ul.quick-btns{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+ul.quick-btns li{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+ul.quick-btns i{
+    font-size: 18px;
+    cursor: pointer;
+}
+.quick-com{
+    padding-left: 22px;
+    padding-right: 22px;
+}
+.quick-logo{
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+.quick-logo img{
+    width: 120px;
+}
+.quick-link{
+    text-align: center;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.quick-link span{
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background: #999;
+    vertical-align: middle;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.quick h1{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 900;
+    border-bottom: 1px solid #555;
+    position: relative;
+    margin-bottom: 20px;
+}
+.quick h1::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background: #555;
 }
