@@ -2,7 +2,14 @@
     const listAll = document.getElementsByClassName('list-all')[0];
     const cart = document.getElementById('cart');
     const close = document.getElementById('close');
- 
+    const changeImg = document.querySelectorAll('.smallimg');
+
+    changeImg.forEach(function(el){
+      el.addEventListener('mouseenter', function(event){
+         console.log(event.target.src);
+      });
+    });
+
     listAll.addEventListener("click", changeNav);
     cart.addEventListener('click', cartBoxView);
     close.addEventListener('click', cartBoxView);
@@ -35,7 +42,7 @@
  
  //// 슬라이드쇼 
  let slideIndex = 0;
- showSlides();
+//  showSlides();
  
  function showSlides() {
     let i;
@@ -59,7 +66,7 @@
  
  
  }());
- document.getElementsByClassName('tablinks')[0].click();
+//  document.getElementsByClassName('tablinks')[0].click();
 
 
  function viewQuick(){
@@ -188,6 +195,14 @@ fetch('./data/shoplist.json')
     }
 
     document.getElementById("row").innerHTML = div;
-
+   
+    let side = document.querySelector('#up', function(){
+      window
+    })
 })
 .catch((err)=> console.log(err));
+
+// function imgchange(){
+//    // document.getElementsByClassName('.bigimg').src = "images/002.jpg";
+//    ('.smallimg').hover(function)
+//    }
