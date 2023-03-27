@@ -43,25 +43,21 @@
  //// 슬라이드쇼 
  let slideIndex = 0;
 //  showSlides();
- 
- function showSlides() {
-    let i;
-    const slides = document.getElementsByClassName('img-slide');
-    const dot = document.getElementsByClassName('dot');
- 
-    for( i = 0; i < slides.length; i++) {
-       slides[i].style.display = "none";
-       dot[i].classList.remove("active");
-    }
-    slideIndex++;
-    if(slideIndex > slides.length){
-       slideIndex = 1;
-    }
-    slides[slideIndex -1].style.display = "block";
-    dot[slideIndex-1].classList.add('active');
-    setTimeout(showSlides, 5000);
- }
- 
+
+const btnRight = document.getElementById("btn-right");
+const btnLeft = document.getElementById("btn-left");
+const ptId = document.getElementById("btIn");
+let ps = 0;
+
+btnRight.onclick = function(){
+   ps = ptIn.offsetleft;
+   if(ps>-200){
+      ps -= 50;
+      ptIn.style.left = ps +"px";
+   }
+      
+}
+
 
  
  
@@ -89,22 +85,6 @@
     e.currentTarget.classList.add('active');
  }
  
- function viewTab(e){
-    const tabcontent = document.getElementsByClassName('tabcontent');
-    const tabs  = document.getElementsByClassName('tab')[0];
-    console.log(tabs.children[0]);
- 
-    for( let i =0; i < tabcontent.length; i++) {
-       tabcontent[i].classList.remove('active');
-    }
-  
-    for( let i = 0; i < tabcontent.length; i++) {
-       tabs.children[i].classList.remove('active');
-    }
- 
-    tabcontent[e].classList.add('active');
-    tabs.children[e].classList.add('active');
- }   
  
 //  fetch('data/test.json')
    
