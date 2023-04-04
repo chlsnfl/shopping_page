@@ -70,7 +70,7 @@ span.flags{
     vertical-align:middle;
     margin-right:5px;
     border:1px solid #ddd;
-    background: url(../images/) no-repeat;
+    background: url(../design/국기.png) no-repeat;
     background-size:290px;
 }
 span.flags.kr{
@@ -962,4 +962,73 @@ ul.quick-btns i{
 }
 .addProdudct li#remove{
     width: 6%;
+}
+
+/*main*/
+input[type =radio].color{
+    display: none;
+}
+label.colors{
+ position:relative;
+ display:inline-block;
+ width: 50px;
+ cursor:pointer;
+ vertical-align: top;
+ margin-left: 15px;
+}
+label.colors span{
+  display:block;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  border-width:1px;
+  border-style:solid;
+  margin-right:10px;
+  position:absolute;
+  top:0;
+  left:0;
+}
+label.colors.rgray span{
+  border-color:gray;
+}
+label.colors.rblack span{
+  border-color:black;
+}
+label.colors.purple span{
+  border-color:purple;
+}
+label.colors.lightblue span{
+  border-color:lightblue;
+}
+label.colors span::after{
+  display:block;
+  content:"";
+  width:20px;
+  height:20px;
+  position:absolute;
+  top:4px;
+  left:4px;
+  border-radius:50%;
+}
+input[type=radio]:checked~p{
+font-weight: 800;
+}
+label.colors.rgray input[type = radio]:checked+span::after{
+    background: gray;
+}
+label.colors.rblack input[type = radio]:checked+span::after{
+     background: black;
+}
+label.colors.purple input[type = radio]:checked+span::after{
+    background: purple;
+}
+label.colors.lightblue input[type = radio]:checked+span::after{
+    background: lightblue;
+}
+label.colors.rgray span::after{ background:rgb(209, 208, 208); }
+label.colors.rblack span::after{ background:rgb(131, 131, 131); }
+label.colors.purple span::after{ background:rgb(223, 117, 223); }
+label.colors.lightblue span::after{ background:rgb(205, 240, 255); }
+.colors p{
+margin-top: 35px;
 }
