@@ -2,13 +2,27 @@
     const listAll = document.getElementsByClassName('list-all')[0];
     const cart = document.getElementById('cart');
     const close = document.getElementById('close');
-    const changeImg = document.querySelectorAll('.smallimg');
+    const changeImg = document.querySelectorAll('.simg');
+    const size = document.shopform.size;
 
     changeImg.forEach(function(el){
       el.addEventListener('mouseenter', function(event){
-         console.log(event.target.src);
+         const src = event.target.src;
+         document.getElementById('bimg').src=src;
       });
     });
+
+
+    size.forEach(function(sz){
+      sz.addEventListener('change', function(e){
+         const selectTitle = document.getElementById("title").value;
+         const selectPrice = document.getElementById("price").value;
+         const selectColor = document.querySelector('.color:checked').value;
+         const selectSize = document.querySelector('.sizes:checked').value;
+         console.log(selectSize);
+      });
+    });
+
 
     listAll.addEventListener("click", changeNav);
     cart.addEventListener('click', cartBoxView);
@@ -29,10 +43,7 @@
     }
  
   
-    function cartBoxView(){
-       document.getElementsByClassName('cart-view')[0].classList.toggle('none');
-    }
- 
+
    // const bx = document.getElementById("ct");
     // console.log(bx.dataset);
  
@@ -64,6 +75,20 @@ btnRight.onclick = function(){
  }());
 //  document.getElementsByClassName('tablinks')[0].click();
 
+function updn(i,n){
+   var ct= Number(document.getElementsByClassName('ct')[i].value);
+   if(n>0){
+      if(ct<=11){
+         ct=ct+1;
+      }
+   }else{
+      if(ct>0){
+         ct=ct-1;
+      }
+   }
+   document.getElementsByClassName('ctv')[i].innerHTML = ct;
+   document.getElementsByClassName('ct')[i].value =ct;
+ }
 
  function viewQuick(){
    document.getElementsByClassName('quick')[0].classList.toggle('action');

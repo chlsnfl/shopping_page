@@ -275,27 +275,43 @@
                                 <label class="colors lightblue"><input type="radio" class="color" name="color" value="하늘색"><span></span><p>하늘색</p></label>                          
                             </li>
     
-                        <li>size</li>
+                        <li class="big"><lable>size</lable>
+                            <label class="sizes s"><input type="radio" class="size" name="size" value="스몰" checked><p>S</p></label>
+                            <label class="sizes m"><input type="radio" class="size" name="size" value="미디움" ><p>M</p></label>
+                            <label class="sizes l"><input type="radio" class="size" name="size" value="라지" ><p>L</p></label>
+                            <label class="sizes xl"><input type="radio" class="size" name="size" value="엑스라지"><p>XL</p></label>
+
+                        </li>
                     </ul>
-                    <ul class="addProdudct">
+                    <ul class="addProduct">
                         <li class="title">
                             <p>제목</p>
                             <p class="option">옵션</p>
                         </li>
-                        <li class="add">
-                            1
+                        <li id="add">
+                           <div class="addbox">
+                               <span class="ctv">0</span>
+                               <div class="pmbox">
+                                 <div class="up" onclick="updn(0,1)"><i class="fa-solid fa-angle-up"></i></div>
+                                 <div class="down" onclick="updn(0,-1)"><i class="fa-solid fa-angle-down"></i></div>
+                               </div>
+                           </div>
+                           <input type="hidden" name="ct[]" class="ct" value="0">
                         </li>
-                        <li class="remove">
-                            2
+                        <li id="remove">
+2
+                        </li> 
+                        <li id="totalP">
+3
                         </li>
-                        <li class="totalP">
-                            3
-                        </li>
-                    </ul>
+                    </ul>   
                     <div class="total">
                         <label>총 상품 금액<span>(수량)</span></label>
                         <div>0<span>(0개)</span></div>
                     </div>
+                    <input type="hidden" name="price" id="price" value="24000">
+                    <input type="hidden" name="title" id="title" value="앨피배색니트">
+                    <input type="hidden" name="totalprice" id="totalprice" >
                 </form>
             </div>
         </div>
