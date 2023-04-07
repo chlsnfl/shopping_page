@@ -230,7 +230,8 @@
                             <div class="rv-star">
                                 <h5>리뷰평점</h5>
                                 <p>5.0</p>
-                                <p> <i class="fa-solid fa-star"></i>
+                                <p> 
+                                    <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -240,6 +241,7 @@
                             </div>
                             <div class="rv-pt">
                                 <div class="pt-in" id="ptIn">
+                                    <a href="#" class="svbox"></a>
                                     <a href="#" class="svbox"></a>
                                     <a href="#" class="svbox"></a>
                                     <a href="#" class="svbox"></a>
@@ -262,9 +264,9 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <form id="shopform" method="post">
+                <form id="shopform" method="post" name = "shopform">
                     <ul class="mainProduct">
-                        <li><h1>앨피배색니트 </h1></li>
+                        <li class="subject"><h1>앨피배색니트 </h1></li>
                         <li><p>세련된 배색 라인과 골드버튼 디테일로 포인트룩으로 good~!</p></li>
                         <li class = "big"><label>판매가</label><del>24,000원</del></li>
                         <li class = "big"><label>할인판매가	</label><strong>22,800원</strong><span class="salem"></span></li>
@@ -283,35 +285,15 @@
 
                         </li>
                     </ul>
-                    <ul class="addProduct">
-                        <li class="title">
-                            <p>제목</p>
-                            <p class="option">옵션</p>
-                        </li>
-                        <li id="add">
-                           <div class="addbox">
-                               <span class="ctv">0</span>
-                               <div class="pmbox">
-                                 <div class="up" onclick="updn(0,1)"><i class="fa-solid fa-angle-up"></i></div>
-                                 <div class="down" onclick="updn(0,-1)"><i class="fa-solid fa-angle-down"></i></div>
-                               </div>
-                           </div>
-                           <input type="hidden" name="ct[]" class="ct" value="0">
-                        </li>
-                        <li id="remove">
-2
-                        </li> 
-                        <li id="totalP">
-3
-                        </li>
-                    </ul>   
+                    <div id="addProduct"></div>                          
                     <div class="total">
-                        <label>총 상품 금액<span>(수량)</span></label>
+                        <label>총 상품금액<span>(수량)</span></label>
                         <div>0<span>(0개)</span></div>
                     </div>
-                    <input type="hidden" name="price" id="price" value="24000">
-                    <input type="hidden" name="title" id="title" value="앨피배색니트">
-                    <input type="hidden" name="totalprice" id="totalprice" >
+                    <input type="hidden" name="price" id="price" value="81900">
+                    <input type="hidden" name="title" id="title" value="앙상블트위드원피스">
+                    <input type="hidden" name="totalprice" id="totalprice">
+
                 </form>
             </div>
         </div>
@@ -419,7 +401,7 @@
         </div>
     </div>
 
-    <script src="js/index.js"></script>
+
     <script src="js/shop.js"></script>
 
 

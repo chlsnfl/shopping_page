@@ -1,213 +1,204 @@
 (function(){
-    const listAll = document.getElementsByClassName('list-all')[0];
-    const cart = document.getElementById('cart');
-    const close = document.getElementById('close');
-    const changeImg = document.querySelectorAll('.simg');
-    const size = document.shopform.size;
+   const listAll = document.getElementsByClassName('list-all')[0];
+   const cart = document.getElementById('cart');
+   const close = document.getElementById('close');
+   const changeImg = document.querySelectorAll('.simg');
+   const size = document.shopform.size;
+   const rootColors = document.getElementsByClassName('rootColors')[0];
 
-    changeImg.forEach(function(el){
+   changeImg.forEach( function(el){
       el.addEventListener('mouseenter', function(event){
-         const src = event.target.src;
-         document.getElementById('bimg').src=src;
+          const src = event.target.src;
+          document.getElementById('bimg').src=src;
       });
-    });
+   });
 
+   //컬러 선택하면 size check 풀기
+   rootColors.addEventListener('click' , function(){
+       document.querySelectorAll('.size').forEach((v, i)=> {
+          v.checked = false;
+       });
+   });
 
-    size.forEach(function(sz){
-      sz.addEventListener('change', function(e){
-         const selectTitle = document.getElementById("title").value;
-         const selectPrice = document.getElementById("price").value;
-         const selectColor = document.querySelector('.color:checked').value;
-         const selectSize = document.querySelector('.sizes:checked').value;
-         console.log(selectSize);
-      });
-    });
+   //본문 주문 폼
+   size.forEach( function(sz){
+       sz.addEventListener('change', function(e){
+          const selectTitle = document.getElementById("title").value;
+          const selectPrice = document.getElementById("price").value;
+          const selectColor = document.querySelector('.color:checked').value;
+          const selectSize = document.querySelector('.size:checked').value;
+          const addProduct = document.getElementById("addProduct");
+          let isAddProduct = document.getElementsByClassName("addProduct");        
+          const colors = document.getElementsByClassName('color');
 
+          let colorsIndex;
+          let i;
 
-    listAll.addEventListener("click", changeNav);
-    cart.addEventListener('click', cartBoxView);
-    close.addEventListener('click', cartBoxView);
-   
-    function changeNav(){
-       const nav = document.getElementsByTagName('nav')[0].offsetTop + 52;
-       const sitemap = document.getElementById('sitemap');
-       listAll.classList.toggle('close');
-       listAll.classList.toggle('newlist');
-       console.log(listAll.className);
-       if(listAll.className == 'list-all close'){
-         sitemap.style.top = nav+"px";
-         sitemap.style.display="block";
-       }else{
-          sitemap.style.display="none";
-       }
-    }
- 
-  
-
-   // const bx = document.getElementById("ct");
-    // console.log(bx.dataset);
- 
- //    window.onload = function(){
- //    }
-   
- 
- //// 슬라이드쇼 
- let slideIndex = 0;
-//  showSlides();
-
-const btnRight = document.getElementById("btn-right");
-const btnLeft = document.getElementById("btn-left");
-const ptId = document.getElementById("btIn");
-let ps = 0;
-
-btnRight.onclick = function(){
-   ps = ptIn.offsetleft;
-   if(ps>-200){
-      ps -= 50;
-      ptIn.style.left = ps +"px";
-   }
+          for(i = 0; i<colors.length; i++) {
+            if(colors[i].checked) colorsIndex = i;
+          }
       
+          const sizes = document.getElementsByClassName('size');
+          let sizesIndex;
+          for(i = 0; i < sizes.length; i++) {
+            if(sizes[i].checked) sizesIndex = i;
+          }
+          
+         //  const selectSizeCount = document.querySelectorAll('.size').findIndex(e=>e.checked);
+          
+         let addlist = true;
+         let count = 0;
+         if(isAddProduct.length > 0) {
+            count = isAddProduct.length;
+         }
+
+         document.querySelectorAll('.addProduct').forEach(function(v){
+            if("addProduct"+colorsIndex+sizesIndex == v.id){
+               alert("같은 주문이 있습니다.");
+               addlist = false;
+            }
+         });
+
+         if(addlist){
+
+         
+               
+         let list = `<ul class="addProduct" id="addProduct${colorsIndex}${sizesIndex}">
+          <li class="title">
+              <p>${selectTitle}</p>
+              <p class="option">${selectColor} , ${selectSize}</p>
+          </li>
+          <li id="add">
+             <div class="addbox">
+                 <span class="ctv" id="ctv${colorsIndex}${sizesIndex}">1</span>
+                 <div class="pmbox">
+                   <div class="up" onclick="updn('${colorsIndex}${sizesIndex}', 1)"><i class="fa-solid fa-angle-up"></i></div>
+                   <div class="down" onclick="updn('${colorsIndex}${sizesIndex}', -1)"><i class="fa-solid fa-angle-down"></i></div>
+                 </div>
+             </div>
+             <span class="listclose" onclick="closelist('${colorsIndex}','${sizesIndex}')"><i class="fa-solid fa-xmark"></i></span>
+             <input type="hidden" name="ct[]" class="ct" id="ct${colorsIndex}${sizesIndex}" value="1">
+             <input type="hidden" name="money[]" id="money${colorsIndex}${sizesIndex}" value="${selectPrice}" />
+             <input type="hidden" name="summoney[]" id="summoney${colorsIndex}${sizesIndex}" value="${selectPrice}" />
+           </li>
+          <li class="totalP" id="totalIP${colorsIndex}${sizesIndex}">
+               ${numComma(selectPrice)}원
+          </li>
+      </ul>`;
+          const opt = addProduct.innerHTML;
+          addProduct.innerHTML = opt + list;
+         }
+       });
+   });
+
+   /*
+   changeImg.forEach( el => el.addEventListener('mouseenter', event=>{
+       console.log(event);
+   }));
+   */
+   listAll.addEventListener("click", changeNav);
+   cart.addEventListener('click', cartBoxView);
+   close.addEventListener('click', cartBoxView);
+  
+   function changeNav(){
+      const nav = document.getElementsByTagName('nav')[0].offsetTop + 52;
+      const sitemap = document.getElementById('sitemap');
+      listAll.classList.toggle('close');
+      listAll.classList.toggle('newlist');
+      console.log(listAll.className);
+      if(listAll.className == 'list-all close'){
+        sitemap.style.top = nav+"px";
+        sitemap.style.display="block";
+      }else{
+         sitemap.style.display="none";
+      }
+   }
+
+ 
+   function cartBoxView(){
+      document.getElementsByClassName('cart-view')[0].classList.toggle('none');
+   }
+
+  // const bx = document.getElementById("ct");
+   // console.log(bx.dataset);
+
+//    window.onload = function(){
+//    }
+
+   const btnRight = document.getElementById("btn-right");
+   const btnLeft = document.getElementById("btn-left");
+   const ptIn = document.getElementById("ptIn");
+   let ps = 0;
+   btnLeft.onclick = function(){
+     ps = ptIn.offsetLeft;
+     if(ps < 0) {
+       ps += 50;
+       ptIn.style.left = ps + "px";
+     }  
+   }
+   btnRight.onclick = function(){
+      ps = ptIn.offsetLeft;
+      if(ps > -200) {
+         ps -= 50;
+         //console.log(ps);
+         ptIn.style.left = ps + "px";
+      }
+   }
+
+}());
+
+//세자리 단위 콤마 찍는 정규식
+ const numComma = (value) => {
+   value = value.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+   return value;
+ }
+
+
+ //리스트 닫기
+ function closelist(m, n) {
+     document.getElementById('addProduct'+m+n).remove();
+ }
+
+
+function updn(i, n) {
+   var ct = parseInt(document.getElementById('ct'+i).value);
+   var money = parseInt(document.getElementById('money'+i).value);
+   let summoney = 0;
+   if(n > 0) {
+      if(ct <= 11) {
+          ct = ct + 1;
+      }
+   }else{
+      if(ct > 1) {
+         ct = ct - 1;
+      }
+   }
+   summoney = money*ct;
+
+   document.getElementById('summoney'+i).value = summoney;
+   document.getElementById('totalIP'+i).innerHTML = numComma(summoney)+"원";
+   document.getElementById('ctv'+i).innerHTML = ct;
+   document.getElementById('ct'+i).value = ct;
 }
 
 
- 
- 
- }());
-//  document.getElementsByClassName('tablinks')[0].click();
+function viewQuick(){
+   document.getElementsByClassName('quick')[0].classList.toggle('action'); 
+}
 
-function updn(i,n){
-   var ct= Number(document.getElementsByClassName('ct')[i].value);
-   if(n>0){
-      if(ct<=11){
-         ct=ct+1;
-      }
-   }else{
-      if(ct>0){
-         ct=ct-1;
-      }
+function viewTab(e){
+   const tabcontent = document.getElementsByClassName('tabcontent');
+   const tabs  = document.getElementsByClassName('tab')[0];
+   console.log(tabs.children[0]);
+
+   for( let i =0; i < tabcontent.length; i++) {
+      tabcontent[i].classList.remove('active');
    }
-   document.getElementsByClassName('ctv')[i].innerHTML = ct;
-   document.getElementsByClassName('ct')[i].value =ct;
- }
-
- function viewQuick(){
-   document.getElementsByClassName('quick')[0].classList.toggle('action');
- }
-
-
- function openBest(e, bid){
-  
-    const tabcontent = document.getElementsByClassName('besttabcontent');
-    for(i=0; i<tabcontent.length; i++){
-       tabcontent[i].style.display="none";
-    }
-    const tablinks = document.getElementsByClassName('tablinks');
-    for(i=0; i<tablinks.length; i++){
-       tablinks[i].classList.remove('active');
-    }
-    
-    document.getElementById(bid).style.display = 'block';
-    e.currentTarget.classList.add('active');
- }
  
- 
-//  fetch('data/test.json')
-   
-//   .then((res)=>res.json())
-//   .then((res)=>{
-//    let li = '';
-//    for(i=0;i<res.shoplist.length;i++){
-//       li +=
-//       '<div class="col-lg-3 my-5">'+
-//       '<div class="card">'+
-//          '<a href="#">'+
-//              '<img src="'+res.shoplist[i].img+'" class="img-fluid" alt="001">'+
-//          '</a>'+
-//           '<div class="pd-list">'+
-//               '<li>'+
-//                   '<span class="'+res.shoplist[i].color[0]+'"></span>'+
-//                   '<span class="'+res.shoplist[i].color[1]+'"></span>'+
-//                   '<span class="'+res.shoplist[i].color[2]+'"></span>'+
-//                   '<span class="'+res.shoplist[i].color[3]+'"></span>'+
-//               '</li>'+
-//               '<li class="pd-title">'+
-//                   '<h1>"'+res.shoplist[i].title+'"</h1>'+
-//               '</li>'+
-//               '<li>'+
-//                   '<del>'+res.shoplist[i].delprice+'</del>'+
-//                   '<br>'+
-//                   '<strong>'+res.shoplist[i].saleprice+'</strong>'+
-//               '</li>'+
-//               '<li>'+
-//                   '<p>'+res.shoplist[i].content+'</p>'+
-//               '</li>'+
-//               '<li class="last">'+
-//                   '<span>'+res.shoplist[i].news+'</span>'+
-//                   '<span>핫딜할인5%</span>'+
-//               '</li>'+
+   for( let i = 0; i < tabcontent.length; i++) {
+      tabs.children[i].classList.remove('active');
+   }
 
-//           '</div>'+
-//       '</div>'+
-//   '</div>'+
-// '</div>'
-//    }
-//    document.getElementById('row').innerHTML = li;
-// }
-// )
-
-
-fetch('./data/shoplist.json')
-.then((res)=>res.json())
-.then((res)=> {
-    const rs = res.shoplist; 
-    let div = "";
-
-    for(let i = 0; i < rs.length; i++){
-      div += `<div class="col-lg-3 my-5">
-        <div class="card">
-            <a href="main.html">
-              <img src="${rs[i].img}" class="img-fluid" alt="${rs[i].img}" />
-            </a>
-            <div class="card-body">
-               <ul class="pd-list">
-                  <li>`;
-
-      var color = '';   
-      for(let c=0; c < rs[i].color.length; c++){
-        color +=  `<span class="${rs[i].color[c]}"></span>`;
-      }             
-      div += color;            
-      div += `</li>
-                  <li class="pd-title">
-                      <h1>${rs[i].title}</h1>
-                  </li>
-                  <li>
-                      <del>${rs[i].delprice}</del>
-                      <br>
-                      <strong>${rs[i].saleprice}</strong>
-                  </li>
-                  <li>
-                      <p>${rs[i].content}</p>
-                  </li>
-                  <li class="last">
-                     <span>베스트셀러</span>
-                     <span>핫딜할인5%</span>
-                  </li>
-               </ul> 
-            </div>
-        </div>
-     </div>`;
-    }
-
-    document.getElementById("row").innerHTML = div;
-   
-    let side = document.querySelector('#up', function(){
-      window
-    })
-})
-.catch((err)=> console.log(err));
-
-// function imgchange(){
-//    // document.getElementsByClassName('.bigimg').src = "images/002.jpg";
-//    ('.smallimg').hover(function)
-//    }
+   tabcontent[e].classList.add('active');
+   tabs.children[e].classList.add('active');
+}   
